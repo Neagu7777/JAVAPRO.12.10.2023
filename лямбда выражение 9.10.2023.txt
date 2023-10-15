@@ -1,0 +1,58 @@
+В отдельном проекте создайте несколько реализаций виртуальных интерфейсов с помощью лямбда выражений.
+
+Функциональный. Принимает силуэт, а отдает ее размер
+BinaryOperator – занимает две строки, выдаёт текст – результат сложения строки
+Поставщик. Ничего не принимает, отдает случайно сгенерированное число
+Потребитель. Принимает число, записывает на экране «привет» количество раз, равное значение.
+
+
+Функционал :
+Джава
+
+ код
+Functional<String, Integer> stringLength = (str) -> str.length();
+int length = stringLength.apply("Hello, World!");
+System.out.println(
+System
+"String length: " + length);
+
+``
+Бинарныйоператор :
+Джава
+
+ код
+BinaryOperator<String> concatenateStrings = (str1, str2) -> str1 + str2;
+String result = concatenateStrings.apply("Hello, ", "World!");
+System.out.println(
+System.out.println
+"Concatenated String: " + result);
+
+Поставщик :
+Джава
+
+ код
+Supplier<Integer> randomIntegerSupplier = () -> (int) (Math.random() * 100);
+int randomNumber = randomIntegerSupplier.get();
+System.out.println(
+System
+"Random Number: " + randomNumber);
+
+Потребитель :
+текст
+
+ код
+Consumer<Integer> printHelloXTimes = (count) -> {
+    for (int i = 0; i < count; i++) {
+        System.out.println(
+        System.out.println
+"Привет");
+    }
+};
+printHelloXTimes.accept(
+    }
+};
+printHelloXTimes
+
+    }
+};
+3); // Выведет "Привет" три раза
